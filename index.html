@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Interaktives Lern-Tool für das Periodensystem: Erklärung der chemischen Eigenschaften, Quiz-Modus, Elementinfos u.v.m.">
+    <title>Periodensystem einfach erklärt</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <link rel="icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .subtitle {
+            font-size: 1.2rem;
+            color: #dfe6e9;
+            margin-bottom: 15px;
+        }
+        .introduction {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+        }
+        .introduction h2, .size-order h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+        .introduction p, .size-order ul, .size-order p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2d3436;
+        }
+        .size-order ul {
+            margin-left: 20px;
+            list-style: disc;
+            margin-bottom: 15px;
+        }
+        .legend ul {
+            padding-left: 20px;
+            list-style: disc;
+        }
+        .legend li {
+            margin-bottom: 8px;
+            color: #2d3436;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Periodensystem einfach erklärt</h1>
+            <p class="subtitle">Kompliziertes einfach gemacht: Lerne mit Farben, Quiz und visuellen Hilfen</p>
+            <div class="controls">
+                <button id="quiz-btn" class="btn primary" aria-label="Quiz starten">Quiz starten</button>
+                <button id="info-btn" class="btn secondary" aria-label="Element-Information anzeigen">Element-Info</button>
+                <button id="reset-btn" class="btn secondary" aria-label="Zurücksetzen">Zurücksetzen</button>
+            </div>
+        </header>
+
+        <section class="introduction">
+            <h2>Wie funktioniert das Periodensystem?</h2>
+            <p>Das Periodensystem ordnet alle bekannten chemischen Elemente. Die <strong>Spalten</strong> nennt man Gruppen. Alle Elemente in einer Gruppe haben ähnliche Eigenschaften, z. B. reagieren sie ähnlich mit Wasser.</p>
+            <p>Die <strong>Zeilen</strong> nennt man Perioden. Je weiter rechts, desto mehr Protonen und Elektronen besitzt das Element. Ein größerer Atomkern zieht Elektronen stärker an. Darum ändert sich z. B. die <strong>Elektronegativität</strong> systematisch.</p>
+            <div class="size-order">
+                <h3>Größenvergleich im Periodensystem</h3>
+                <ul>
+                    <li><strong>Atomradius</strong>: nimmt <em>nach rechts ab</em>, <em>nach unten zu</em></li>
+                    <li><strong>Ionisierungsenergie</strong>: nimmt <em>nach rechts zu</em>, <em>nach unten ab</em></li>
+                    <li><strong>Elektronegativität</strong>: steigt <em>nach rechts</em>, sinkt <em>nach unten</em></li>
+                </ul>
+                <p>Warum? Mehr Protonen ziehen Elektronen stärker an, obwohl der Abstand zunimmt. Gleichzeitig nimmt die Abschirmung durch innere Elektronenschalen zu.</p>
+            </div>
+        </section>
+
+        <section class="legend">
+            <h3>Elementkategorien erklärt</h3>
+            <ul>
+                <li><strong>Alkalimetalle</strong>: sehr reaktiv, 1 Valenzelektron</li>
+                <li><strong>Erdalkalimetalle</strong>: reaktiv, 2 Valenzelektronen</li>
+                <li><strong>Halogene</strong>: bilden gerne Salze (Halogen = Salzbildner)</li>
+                <li><strong>Edelgase</strong>: sehr stabil, reaktionsträge</li>
+                <li><strong>Übergangsmetalle</strong>: typische Metalleigenschaften, viele Oxidationszahlen</li>
+                <li><strong>Nichtmetalle</strong>: oft Gase, schlechte Leiter</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registriert:', reg))
+            .catch(err => console.error('Service Worker Fehler:', err));
+        });
+      }
+    </script>
+</body>
+</html>
