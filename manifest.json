@@ -1,0 +1,23 @@
+{
+  "name": "Periodensystem Lerntool",
+  "short_name": "PSE Tool",
+  "lang": "de",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#764ba2",
+  "theme_color": "#667eea",
+  "description": "Lerne das Periodensystem spielerisch – mit Quiz, Erklärungen und visuellen Hilfen.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
